@@ -12,7 +12,6 @@ $(document).ready(function() {
     //send start and end dates to the server
     $.get(`/api?start_date=${sD}&end_date=${eD}`, function(body, status) {
       //console.log(body)
-      //var nasa= "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-10-17&end_date=2017-10-24&api_key=nxDNl3KDNp3hoakhRWDKErj3kIbrw8SS5Y7UsCQi";
       body = JSON.parse(body);
       console.log(body)
 
@@ -36,10 +35,6 @@ $(document).ready(function() {
         $(".theScreen").append("<p>Velocity MPH: " + Math.round(hazardous[i].close_approach_data[0].relative_velocity.miles_per_hour) + "</p>")
         $(".theScreen").append("<p>Max Diameter Feet: " + Math.round(hazardous[i].estimated_diameter.feet.estimated_diameter_max) + "</p>")
         $(".theScreen").append("<p>Distance from Earth in Miles: " + hazardous[i].close_approach_data[0].miss_distance.miles + "</p>")
-        // $(".theScreen").append("<br><p>Asteroid Name: " + data.near_earth_objects[day][i].name + "</p>")
-        // $(".theScreen").append("<p>Velocity MPH: " + Math.round(data.near_earth_objects[day][i].close_approach_data[0].relative_velocity.miles_per_hour) + "</p>")
-        // $(".theScreen").append("<p>Max Diameter Feet: " + Math.round(data.near_earth_objects[day][i].estimated_diameter.feet.estimated_diameter_max) + "</p>")
-        // $(".theScreen").append("<p>Distance from Earth in Miles: " + data.near_earth_objects[day][i].close_approach_data[0].miss_distance.miles + "</p>")
       }
 
     });
